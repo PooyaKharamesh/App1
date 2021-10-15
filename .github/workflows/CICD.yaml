@@ -123,7 +123,7 @@ jobs:
         uses: PooyaKharamesh/AL-Go-Actions/RunPipeline@main
         with:
           Project: ${{matrix.project}}
-          Settings: ${{ steps.readsecrets.outputs.Settings }}
+          Settings: ${{ env.Settings }}
           Secrets: ${{ env.RepoSecrets }}
 
       - name: Publish test results
