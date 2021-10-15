@@ -9,3 +9,50 @@ pageextension 50100 CustomerListExt extends "Customer List"
         Message('App published: Hello world');
     end;
 }
+
+
+table 50100 App1MyTable
+{
+    DataClassification = ToBeClassified;
+
+    fields
+    {
+        field(1; MyField; Integer)
+        {
+            DataClassification = ToBeClassified;
+
+        }
+    }
+
+    keys
+    {
+        key(Key1; MyField)
+        {
+            Clustered = true;
+        }
+    }
+
+    var
+        myInt: Integer;
+
+    trigger OnInsert()
+    begin
+
+    end;
+
+    trigger OnModify()
+    begin
+
+    end;
+
+    trigger OnDelete()
+    begin
+
+    end;
+
+    trigger OnRename()
+    begin
+
+    end;
+
+}
