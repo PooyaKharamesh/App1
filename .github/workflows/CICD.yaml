@@ -110,18 +110,20 @@ jobs:
           project: ${{matrix.project}}
 
       - name: Read secrets
+        id: readsecrets
         uses: PooyaKharamesh/AL-Go-Actions/ReadSecrets@main
         env:
           secrets: ${{toJson(secrets)}}
         with:
           settings: ${{steps.readsettings.outputs.Settings}}
           secrets: 'licenseFileUrl,insiderSasToken,CodeSignCertificateUrl,CodeSignCertificatePassword,KeyVaultCertificateUrl,KeyVaultCertificatePassword,KeyVaultClientId'
+          updateSettingsWithValues: 'Y'
 
       - name: Run pipeline
         uses: PooyaKharamesh/AL-Go-Actions/RunPipeline@main
         with:
           Project: ${{matrix.project}}
-          Settings: ${{ steps.readsettings.outputs.Settings }}
+          Settings: ${{ steps.readsecrets.outputs.Settings }}
           Secrets: ${{ env.RepoSecrets }}
 
       - name: Publish test results
