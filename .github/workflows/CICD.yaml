@@ -110,7 +110,6 @@ jobs:
           project: ${{matrix.project}}
 
       - name: Read secrets
-        id: readsecrets
         uses: PooyaKharamesh/AL-Go-Actions/ReadSecrets@main
         env:
           secrets: ${{toJson(secrets)}}
