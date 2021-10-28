@@ -28,7 +28,7 @@ page 50100 MyPage
 
                 trigger OnAction()
                 begin
-                    Message('something !');
+                    Message('this is a better message  !');
                 end;
             }
         }
