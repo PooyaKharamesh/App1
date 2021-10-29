@@ -28,7 +28,7 @@ page 50100 MyPage
 
                 trigger OnAction()
                 begin
-                    Message('this is a better message  !');
+                    Message('this is a hotfixed message  !');
                 end;
             }
         }
