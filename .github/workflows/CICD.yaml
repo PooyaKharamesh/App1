@@ -5,12 +5,13 @@ on:
     paths-ignore:
       - 'README.md'
       - '.github/**'
-    branches: [ main ]
+    branches: 
+      - main
+      - 'releases/**'
   pull_request:
     paths-ignore:
       - 'README.md'
       - '.github/**'
-    branches: [ main ]
   workflow_dispatch:
 
 defaults:
